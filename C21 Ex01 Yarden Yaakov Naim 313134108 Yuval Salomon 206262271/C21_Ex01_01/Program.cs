@@ -1,25 +1,27 @@
-﻿//using System.Text;
-using System;
-
-namespace C21_Ex01_01
+﻿namespace C21_Ex01_01
 {
+    using System;
+
     public class Program
     {
         private static int s_Num1, s_Num2, s_Num3;
+
         private static float s_AvgNumOfZeroes,
                              s_AvgNumOfOnes;
+
         private static int s_NumOfPowTwo = 0,
                            s_MaxNum, s_MinNum,
                            s_NumOfAscendingSeries = 0;
+
         public static void Main()
         {
-            string binaryStr1 = string.Empty , binaryStr2 = string.Empty, binaryStr3 = string.Empty;
-            getInputFromUser(ref binaryStr1,ref binaryStr2,ref binaryStr3);
+            string binaryStr1 = string.Empty, binaryStr2 = string.Empty, binaryStr3 = string.Empty;
+            getInputFromUser(ref binaryStr1, ref binaryStr2, ref binaryStr3);
             convertNumbers(binaryStr1, binaryStr2, binaryStr3);
             getStatistics(binaryStr1, binaryStr2, binaryStr3);
             printStatisticsResult();
-        }
-        //Print all the statistics 
+        } 
+
         private static void printStatisticsResult()
         {
             string outputMessage = string.Format(
@@ -42,7 +44,7 @@ The maximum number is {7}, and the minimum is {8}.",
             Console.WriteLine(outputMessage);
         }
 
-        //Wrapper method to convert 3 binary numbers from string to integer
+        // Wrapper method to convert 3 binary numbers from string to integer
         private static void convertNumbers(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             s_Num1 = convertBinaryStrToInteger(i_BinaryNum1);
@@ -50,7 +52,6 @@ The maximum number is {7}, and the minimum is {8}.",
             s_Num3 = convertBinaryStrToInteger(i_BinaryNum3);
         }
 
-        //Convert each one of the 3 binary numbers to integer
         private static int convertBinaryStrToInteger(string i_binaryStr)
         {
             int resultNum = 0, currentDigit;
@@ -66,10 +67,11 @@ The maximum number is {7}, and the minimum is {8}.",
                     resultNum = (resultNum * 2) + 1;
                 }
             }
+
             return resultNum;
         }
 
-        //Get Input from user - 3 binary numbers - 9 digit each
+        // Get Input from user - 3 binary numbers - 9 digit each
         private static void getInputFromUser(ref string io_binaryStr1, ref string io_binaryStr2, ref string io_binaryStr3)
         {
             string currentBinaryNumberStr;
@@ -105,11 +107,12 @@ The maximum number is {7}, and the minimum is {8}.",
                             break;
                         }
                 }
+
                 numberOfVaildNumbers++;
             }
         }
 
-        //Check validity of input - return true if 9 binary digits
+        // Return true if 9 binary digits
         private static bool isValidInput(string i_binaryNum)
         {
             bool result = true;
@@ -127,10 +130,11 @@ The maximum number is {7}, and the minimum is {8}.",
                     }
                 }
             }
+
             return result;
         }
 
-        //Wrapper method to calculate all wanted statistics
+        // Wrapper method to calculate all wanted statistics
         private static void getStatistics(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             getAvgNumOfZeroes(i_BinaryNum1, i_BinaryNum2, i_BinaryNum3);
@@ -141,16 +145,16 @@ The maximum number is {7}, and the minimum is {8}.",
             getMinNum();
         }
 
-        //Calculates the average number of zeroes and updates member accordingly
+        // Calculates the average number of zeroes and updates member accordingly
         private static void getAvgNumOfZeroes(string i_BinaryNum1,string i_BinaryNum2,string i_BinaryNum3)
         {
             int numOfZeroes = getNumOfZeroes(i_BinaryNum1);
             numOfZeroes += getNumOfZeroes(i_BinaryNum2);
             numOfZeroes += getNumOfZeroes(i_BinaryNum3);
-            s_AvgNumOfZeroes = (numOfZeroes / 3f);    
+            s_AvgNumOfZeroes = (numOfZeroes / 3f);
         }
 
-        //Calculates the average number of ones and updates member accordingly
+        // Calculates the average number of ones and updates member accordingly
         private static void getAvgNumOfOnes(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             int numOfOnes = getNumOfOnes(i_BinaryNum1);
@@ -159,7 +163,6 @@ The maximum number is {7}, and the minimum is {8}.",
             s_AvgNumOfOnes = (numOfOnes / 3f);
         }
 
-        //Returns the number of one digits in a string representing a binary number
         private static int getNumOfOnes(string i_BinaryNum)
         {
             int numOfOnes = 0;
@@ -173,7 +176,6 @@ The maximum number is {7}, and the minimum is {8}.",
             return numOfOnes;
         }
 
-        //Returns the number of zero digits in a string representing a binary number
         private static int getNumOfZeroes(string i_BinaryNum)
         {
             int numOfZeroes = 0;
@@ -187,7 +189,6 @@ The maximum number is {7}, and the minimum is {8}.",
             return numOfZeroes;
         }
 
-        //Returns the number of binary numbers which are powers of two - if there is only one '1' in the string means power by 2
         private static void getNumOfPowTwo(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             if(getNumOfOnes(i_BinaryNum1) == 1)
@@ -204,7 +205,6 @@ The maximum number is {7}, and the minimum is {8}.",
             }
         }
 
-        //Checks if a number is an ascending series - true if ascending series
         private static bool isAscendingSeries(int i_Num)
         {
             bool result = true;
@@ -222,33 +222,33 @@ The maximum number is {7}, and the minimum is {8}.",
                     lastDigit = i_Num % 10;
                 }
             }
+
             return result;
         }
 
-        //Returns number of ascending series
         private static void getNumAscendingSeries()
         {
-            if( isAscendingSeries(s_Num1))
+            if(isAscendingSeries(s_Num1))
             {
                 s_NumOfAscendingSeries++;
             }
-            if (isAscendingSeries(s_Num2))
+
+            if(isAscendingSeries(s_Num2))
             {
                 s_NumOfAscendingSeries++;
             }
-            if (isAscendingSeries(s_Num3))
+
+            if(isAscendingSeries(s_Num3))
             {
                 s_NumOfAscendingSeries++;
             }
         }
 
-        //Get maximum number
         private static void getMaxNum()
         {
             s_MaxNum = Math.Max(Math.Max(s_Num1, s_Num2), s_Num3);
         }
 
-        //Get minimum number
         private static void getMinNum()
         {
             s_MinNum = Math.Min(Math.Min(s_Num1, s_Num2), s_Num3);
