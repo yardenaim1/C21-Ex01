@@ -7,7 +7,7 @@
     {
         public static void Main()
         {
-            RecursiveHourGlass(7, 0, true);
+            RecursiveHourGlass(5, 0, true);
         }
 
         public static void RecursiveHourGlass(int i_NumOfAsterisks, int i_NumOfSpaces, bool i_UpperPart)
@@ -34,7 +34,7 @@
                 return;
             }
 
-            if(i_UpperPart)
+            if(i_UpperPart == true)
             {
                 RecursiveHourGlass(i_NumOfAsterisks - 2, i_NumOfSpaces + 1, i_UpperPart);
             }

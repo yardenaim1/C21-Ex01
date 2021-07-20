@@ -112,7 +112,6 @@ The maximum number is {7}, and the minimum is {8}.",
             }
         }
 
-        // Return true if 9 binary digits
         private static bool isValidInput(string i_binaryNum)
         {
             bool result = true;
@@ -134,7 +133,6 @@ The maximum number is {7}, and the minimum is {8}.",
             return result;
         }
 
-        // Wrapper method to calculate all wanted statistics
         private static void getStatistics(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             getAvgNumOfZeroes(i_BinaryNum1, i_BinaryNum2, i_BinaryNum3);
@@ -145,7 +143,6 @@ The maximum number is {7}, and the minimum is {8}.",
             getMinNum();
         }
 
-        // Calculates the average number of zeroes and updates member accordingly
         private static void getAvgNumOfZeroes(string i_BinaryNum1,string i_BinaryNum2,string i_BinaryNum3)
         {
             int numOfZeroes = getNumOfZeroes(i_BinaryNum1);
@@ -154,7 +151,6 @@ The maximum number is {7}, and the minimum is {8}.",
             s_AvgNumOfZeroes = (numOfZeroes / 3f);
         }
 
-        // Calculates the average number of ones and updates member accordingly
         private static void getAvgNumOfOnes(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
             int numOfOnes = getNumOfOnes(i_BinaryNum1);

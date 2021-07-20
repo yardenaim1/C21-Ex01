@@ -6,35 +6,35 @@
     {
         public static void Main()
         {
-            int numOfAsterisksInFirstLine;
-            getInputFromUser(out string heighOfHourglass);
+            int heightOfHourglass = getInputFromUser();
 
-            int.TryParse(heighOfHourglass, out int height);
-            if(height % 2 == 0) // We chose to subtract by 1 if the number is even 
+            if(heightOfHourglass % 2 == 0) // We chose to subtract by 1 if the number is even 
             {
-                height--;
+                heightOfHourglass--;
             }
 
-            numOfAsterisksInFirstLine = height;
-            C21_Ex01_02.Program.RecursiveHourGlass(numOfAsterisksInFirstLine, 0, true);
+            C21_Ex01_02.Program.RecursiveHourGlass(heightOfHourglass, 0, true); // The height of the hourglass is the same to the number of asterisks in the first line
         }
 
-        private static void getInputFromUser(out string o_HeighOfHourglass)
+        private static int getInputFromUser()
         {
+            int height;
             System.Console.WriteLine("Please enter the height of the required hourglass (positive number of lines) and then press 'enter':");
-            o_HeighOfHourglass = System.Console.ReadLine();
+            string InputHeighOfHourglass = System.Console.ReadLine();
 
-            while (!isValidInput(o_HeighOfHourglass))
+            while (!isValidInput(InputHeighOfHourglass, out height))
             {
                 System.Console.WriteLine("Invalid input.\nPlease enter the height of the required hourglass (positive number of lines) and then press 'enter':");
-                o_HeighOfHourglass = System.Console.ReadLine();
+                InputHeighOfHourglass = System.Console.ReadLine();
             }
+            return height;
         }
 
-        private static bool isValidInput(string i_HeightOfHourglass)
+        // If the input is valid, the method returns the hieght in 'o_Height'
+        private static bool isValidInput(string i_HeightOfHourglass, out int o_Height)
         {
-            bool result = int.TryParse(i_HeightOfHourglass, out int height);
-            return result && height >= 0;
+            bool ParseSuccessful = int.TryParse(i_HeightOfHourglass, out o_Height);
+            return ParseSuccessful && o_Height >= 0;
         }
     }
 }
