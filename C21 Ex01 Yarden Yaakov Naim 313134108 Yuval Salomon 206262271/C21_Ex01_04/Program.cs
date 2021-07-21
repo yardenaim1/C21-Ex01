@@ -1,6 +1,7 @@
 ﻿namespace C21_Ex01_04
 {
     using System;
+
     class Program
     {
         public static void Main()
@@ -28,6 +29,7 @@
                 {
                     Console.WriteLine("is not dividable by 4.");
                 }
+
             }
             else
             {
@@ -36,6 +38,7 @@
             }
 
         }
+
         private static bool isEnglishLetterString(string i_StrFromUser)
         {
             return !(isNumber(i_StrFromUser,out int num));
@@ -44,13 +47,14 @@
         private static int numUpperCase(string i_Str)
         {
             int numOfUpperCase = 0;
-            for(int i = 0; i<i_Str.Length;i++)
+            for (int i = 0; i < i_Str.Length; i++)
             {
-                if(i_Str[i] >='A' && i_Str[i]<='Z')
+                if (i_Str[i] >= 'A' && i_Str[i] <= 'Z')
                 {
                     numOfUpperCase++;
                 }    
             }
+
             return numOfUpperCase;
         }
 
@@ -71,14 +75,17 @@
             {
                 result = true;
             }
+
             else if (i_StrFromUser[i_StartLoc] != i_StrFromUser[i_EndLoc])
             {
-                result =false;
+                result = false;
             }
+
             if (i_StartLoc < i_EndLoc)
             {
                 result =  isPalindromRec(i_StrFromUser, i_StartLoc + 1, i_EndLoc - 1) && result;
             }
+
             return result;
         }
 
@@ -97,8 +104,8 @@
             {
                 Console.WriteLine("Invalid input, try again");
                 strFromUser = Console.ReadLine();
-
             }
+
             return strFromUser;
         }
 
@@ -116,7 +123,7 @@
                 if (result == false)
                 {
                     result = true;
-                    for(int i=0; i<i_StringFromUser.Length && result; i++)
+                    for(int i = 0; i < i_StringFromUser.Length && result; i++)
                     {
                         // not betewwn 'a' - 'z' or 'A'-'Z'
                         if(!((i_StringFromUser[i] <= 'z' && i_StringFromUser[i] >= 'a') || (i_StringFromUser[i] <= 'Z' && i_StringFromUser[i] >= 'A')))

@@ -13,6 +13,14 @@
                            s_MaxNum, s_MinNum,
                            s_NumOfAscendingSeries = 0;
 
+
+        public enum eNumOfValidNumbers
+        {
+            FirstNum,
+            SecondNum,
+            ThirdNum
+        }
+
         public static void Main()
         {
             string binaryStr1 = string.Empty, binaryStr2 = string.Empty, binaryStr3 = string.Empty;
@@ -75,40 +83,41 @@ The maximum number is {7}, and the minimum is {8}.",
         private static void getInputFromUser(ref string io_binaryStr1, ref string io_binaryStr2, ref string io_binaryStr3)
         {
             string currentBinaryNumberStr;
-            int numberOfVaildNumbers = 0;
+            eNumOfValidNumbers numOfVaildNumbers = 0;
             System.Console.WriteLine("Please enter three binary numbers - 9 digits each (and press 'enter' after each one):\n");
-            while (numberOfVaildNumbers < 3)
+
+            while ((int)numOfVaildNumbers < 3)
             {
                 currentBinaryNumberStr = System.Console.ReadLine();
-
+             
                 if (!isValidInput(currentBinaryNumberStr))
                 {
                     System.Console.WriteLine("The input you entered is invalid. Please try again.\n");
                     continue;
                 }
 
-                switch (numberOfVaildNumbers)
+                switch (numOfVaildNumbers)
                 {
-                    case 0:
+                    case eNumOfValidNumbers.FirstNum:
                         {
                             io_binaryStr1 = currentBinaryNumberStr;
                             break;
                         }
 
-                    case 1:
+                    case eNumOfValidNumbers.SecondNum:
                         {
                             io_binaryStr2 = currentBinaryNumberStr;
                             break;
                         }
 
-                    case 2:
+                    case eNumOfValidNumbers.ThirdNum:
                         {
                             io_binaryStr3 = currentBinaryNumberStr;
                             break;
                         }
                 }
 
-                numberOfVaildNumbers++;
+                numOfVaildNumbers++;
             }
         }
 
