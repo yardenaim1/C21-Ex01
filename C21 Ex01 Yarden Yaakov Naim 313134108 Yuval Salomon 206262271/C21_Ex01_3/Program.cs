@@ -1,19 +1,21 @@
-﻿namespace C21_Ex01_03
+﻿namespace C21_Ex01_3
 {
     using System;
-    using C21_Ex01_02;
-    class Program
+    using C21_Ex01_2;
+
+    public class Program
     {
         public static void Main()
         {
             int heightOfHourglass = getInputFromUser();
 
-            if(heightOfHourglass % 2 == 0) // We chose to subtract by 1 if the number is even 
+            // We chose to subtract by 1 if the number is even
+            if (heightOfHourglass % 2 == 0) 
             {
                 heightOfHourglass--;
             }
 
-            C21_Ex01_02.Program.RecursiveHourGlass(heightOfHourglass, 0, true); // The height of the hourglass is the same to the number of asterisks in the first line
+            C21_Ex01_2.Program.RecursiveHourGlass(heightOfHourglass, 0, true); // The height of the hourglass is the same to the number of asterisks in the first line
         }
 
         private static int getInputFromUser()
@@ -27,6 +29,7 @@
                 System.Console.WriteLine("Invalid input.\nPlease enter the height of the required hourglass (positive number of lines) and then press 'enter':");
                 InputHeighOfHourglass = System.Console.ReadLine();
             }
+
             return height;
         }
 

@@ -1,8 +1,8 @@
-﻿namespace C21_Ex01_04
+﻿namespace C21_Ex01_4
 {
     using System;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -24,19 +24,16 @@
                 {
                     Console.WriteLine("is dividable by 4.");
                 }
-
                 else
                 {
                     Console.WriteLine("is not dividable by 4.");
                 }
-
             }
             else
             {
                 int numOfUpper = numUpperCase(i_strFromUser);
                 Console.WriteLine("There are {0} uppercase letters in the string", numOfUpper);
             }
-
         }
 
         private static bool isEnglishLetterString(string i_StrFromUser)
@@ -75,7 +72,6 @@
             {
                 result = true;
             }
-
             else if (i_StrFromUser[i_StartLoc] != i_StrFromUser[i_EndLoc])
             {
                 result = false;
@@ -120,21 +116,22 @@
                 {
                     result = true;
                 }
+
                 if (result == false)
                 {
                     result = true;
-                    for(int i = 0; i < i_StringFromUser.Length && result; i++)
+                    for (int i = 0; i < i_StringFromUser.Length && result; i++)
                     {
                         // not betewwn 'a' - 'z' or 'A'-'Z'
-                        if(!((i_StringFromUser[i] <= 'z' && i_StringFromUser[i] >= 'a') || (i_StringFromUser[i] <= 'Z' && i_StringFromUser[i] >= 'A')))
+                        if (!((i_StringFromUser[i] <= 'z' && i_StringFromUser[i] >= 'a') || (i_StringFromUser[i] <= 'Z' && i_StringFromUser[i] >= 'A')))
                         {
                             result = false;
                         }
                     }
                 }
             }
+
             return result;
         }
     }
 }
-

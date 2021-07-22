@@ -1,4 +1,4 @@
-﻿namespace C21_Ex01_01
+﻿namespace C21_Ex01_1
 {
     using System;
 
@@ -12,7 +12,6 @@
         private static int s_NumOfPowTwo = 0,
                            s_MaxNum, s_MinNum,
                            s_NumOfAscendingSeries = 0;
-
 
         public enum eNumOfValidNumbers
         {
@@ -84,7 +83,7 @@ The maximum number is {7}, and the minimum is {8}.",
         {
             string currentBinaryNumberStr;
             eNumOfValidNumbers numOfVaildNumbers = 0;
-            System.Console.WriteLine("Please enter three binary numbers - 9 digits each (and press 'enter' after each one):\n");
+            System.Console.WriteLine("Please enter three binary numbers - 9 digits each (and press 'enter' after each one):");
 
             while ((int)numOfVaildNumbers < 3)
             {
@@ -157,7 +156,7 @@ The maximum number is {7}, and the minimum is {8}.",
             int numOfZeroes = getNumOfZeroes(i_BinaryNum1);
             numOfZeroes += getNumOfZeroes(i_BinaryNum2);
             numOfZeroes += getNumOfZeroes(i_BinaryNum3);
-            s_AvgNumOfZeroes = (numOfZeroes / 3f);
+            s_AvgNumOfZeroes = numOfZeroes / 3f;
         }
 
         private static void getAvgNumOfOnes(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
@@ -165,7 +164,7 @@ The maximum number is {7}, and the minimum is {8}.",
             int numOfOnes = getNumOfOnes(i_BinaryNum1);
             numOfOnes += getNumOfOnes(i_BinaryNum2);
             numOfOnes += getNumOfOnes(i_BinaryNum3);
-            s_AvgNumOfOnes = (numOfOnes / 3f);
+            s_AvgNumOfOnes = numOfOnes / 3f;
         }
 
         private static int getNumOfOnes(string i_BinaryNum)
@@ -178,6 +177,7 @@ The maximum number is {7}, and the minimum is {8}.",
                     numOfOnes++;
                 }
             }
+
             return numOfOnes;
         }
 
@@ -191,19 +191,22 @@ The maximum number is {7}, and the minimum is {8}.",
                     numOfZeroes++;
                 }
             }
+
             return numOfZeroes;
         }
 
         private static void getNumOfPowTwo(string i_BinaryNum1, string i_BinaryNum2, string i_BinaryNum3)
         {
-            if(getNumOfOnes(i_BinaryNum1) == 1)
+            if (getNumOfOnes(i_BinaryNum1) == 1)
             {
                 s_NumOfPowTwo++;
             }
+
             if (getNumOfOnes(i_BinaryNum2) == 1)
             {
                 s_NumOfPowTwo++;
             }
+
             if (getNumOfOnes(i_BinaryNum3) == 1)
             {
                 s_NumOfPowTwo++;
@@ -222,6 +225,7 @@ The maximum number is {7}, and the minimum is {8}.",
                 {
                     result = false;
                 }
+
                 else
                 {
                     lastDigit = i_Num % 10;
@@ -233,17 +237,17 @@ The maximum number is {7}, and the minimum is {8}.",
 
         private static void getNumAscendingSeries()
         {
-            if(isAscendingSeries(s_Num1))
+            if (isAscendingSeries(s_Num1))
             {
                 s_NumOfAscendingSeries++;
             }
 
-            if(isAscendingSeries(s_Num2))
+            if (isAscendingSeries(s_Num2))
             {
                 s_NumOfAscendingSeries++;
             }
 
-            if(isAscendingSeries(s_Num3))
+            if (isAscendingSeries(s_Num3))
             {
                 s_NumOfAscendingSeries++;
             }

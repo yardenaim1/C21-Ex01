@@ -1,8 +1,8 @@
-﻿namespace C21_Ex01_06
+﻿namespace C21_Ex01_6
 {
     using System;
 
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -38,7 +38,6 @@ There are {4} digits greater then the unity digit.
                 {
                     resultNumber++;
                 }
-
             }
 
             return resultNumber;
@@ -53,7 +52,6 @@ There are {4} digits greater then the unity digit.
                 {
                     resultNumber++;
                 }
-
             }
 
             return resultNumber;
@@ -88,7 +86,7 @@ There are {4} digits greater then the unity digit.
             return biggestDigit;
         }
 
-        public static string GetInputFromUser()
+        private static string GetInputFromUser()
         {
             Console.WriteLine("Please enter a positive complete number(with 9 digits) and then press 'enter':");
             string strFromUser = Console.ReadLine();
